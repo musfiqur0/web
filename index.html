@@ -118,7 +118,7 @@
                 <li class="commonClass"><a href="https://www.gibsonai.com/" target="_blank">https://www.gibsonai.com/</a></li>
                 <li class="commonClass"><a href="https://www.keybr.com/" target="_blank">https://www.keybr.com/</a></li>
                 <li class="commonClass"><a href="https://app.emergent.sh/" target="_blank">https://app.emergent.sh/</a></li>
-                <li class="commonClass"><a href="https://app.emergent.sh/" target="_blank">https://app.emergent.sh/</a></li>
+                <li class="commonClass"><a href="https://web.archive.org/web/*/" target="_blank">https://web.archive.org/</a></li>
                 <li class="commonClass"><a href="https://chef.convex.dev/" target="_blank">https://chef.convex.dev/</a></li>
                 <li class="commonClass aiModel"><a href="https://rationale.jina.ai/?q=" target="_blank">https://rationale.jina.ai/</a></li>
                 <li class="commonClass aiModel"><a href="https://www.studyfetch.com/" target="_blank">https://www.studyfetch.com/</a></li>
@@ -211,11 +211,17 @@
             const paramPattern = href.includes('q=') ? 'q=' :
                 href.includes('query=') ? 'query=' :
                     href.includes('text=') ? 'text=' :
-                        href.includes('p=') ? 'p=' : '';
+                        href.includes('p=') ? 'p=' :
+                            href.includes('web/*/') ? 'web/*/' : '';
 
             if (!paramPattern) {
                 //console.warn(`Unknown parameter pattern for ${href}`);
                 return href;
+            }
+            if (paramPattern == 'web/*/') {
+                if (href == 'https://web.archive.org/web/*/') {
+                    return 'https://web.archive.org/web/*/' + searchQuery;
+                }
             }
 
             // Update the URL with the new search query
