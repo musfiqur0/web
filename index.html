@@ -37,7 +37,7 @@
         <button type="submit">Search</button>
         <button type="button" id="resetButton">Reset</button>
     </form>
-
+    <div id="copied" style="position:fixed; top:20px; left:50%; transform:translateX(-50%); background:#000; color:#fff; padding:4px 10px; border-radius:4px; font-size:12px; display:none; z-index:9999;">Copied!</div>
     <div class="grid-container">
         <div>
             <div>CODE</div>
@@ -74,7 +74,8 @@
                 <li class="commonClass jsonConverter"><a href="https://jsoneditoronline.org/" target="_blank">https://jsoneditoronline.org/</a></li>
                 <li class="commonClass jsonConverter invisible"><a href="https://jsonformatter.org/" target="_blank">https://jsonformatter.org/</a></li>
                 <li class="commonClass textCompare"><a href="https://www.diffchecker.com/text-compare/" target="_blank">https://www.diffchecker.com/text-compare/</a></li>
-                <li class="commonClass"><a href="https://text-toolz.com/text-tools/camel-case-converter" target="_blank">https://text-toolz.com/text-tools/camel-case-converter</a></li>
+                <li class="commonClass"><a href="https://appdevtools.com/case-converter" target="_blank">https://appdevtools.com/case-converter</a></li>
+
             </ul>
         </div>
         <div>
@@ -90,7 +91,7 @@
                 <li class="commonClass searchEngine avgSearchEngine aiModel"><a href="https://huggingface.co/spaces/Felladrin/MiniSearch/?q=" target="_blank">https://huggingface.co/spaces/Felladrin/MiniSearch/</a></li>
                 <li class="commonClass searchEngine avgSearchEngine aiModel"><a href="https://www.ecosia.org/search/?q=" target="_blank">https://www.ecosia.org/</a></li>
                 <li class="commonClass searchEngine aiModel fullStudy"><a href="https://iask.ai/?q=" target="_blank">https://iask.ai/</a></li>
-                <li class="commonClass aiModel"><a href="https://chat.ariha.ai/?q=" target="_blank">https://chat.ariha.ai/</a></li>
+                <li class="commonClass invisible aiModel"><a href="https://chat.ariha.ai/?q=" target="_blank">https://chat.ariha.ai/</a></li>
                 <li class="commonClass aiModel reRearch"><a href="https://scite.ai/assistant/?q=" target="_blank">https://scite.ai/assistant/</a></li>
 
                 <li class="commonClass aiModel"><a href="https://app.txyz.ai/?q=" target="_blank">https://app.txyz.ai</a></li>
@@ -136,7 +137,7 @@
                 <li class="commonClass aiModel"><a href="https://app.youlearn.ai/" target="_blank">https://app.youlearn.ai/</a></li>
             </ul>
             <ol>
-                <li>convert this bangla phonetic into english sentence</li>
+                <li>^\s*.?https?.*\r?\n</li>
                 <li>check the grammatical errors only if error has, not a revised or rephrased version of this.</li>
                 <li>explain with code examples</li>
                 <li>extract the text from this image</li>
@@ -150,8 +151,9 @@
                 <li class="commonClass fontRemover"><a href="https://textcompare.io/font-remover" target="_blank">https://textcompare.io/font-remover</a></li>
                 <li class="commonClass mergeFiles"><a href="https://shir-man.com/txt-merge/" target="_blank">https://shir-man.com/txt-merge/</a></li>
                 <li class="commonClass mergeFiles"><a href="https://www.filesmerge.com/merge-text-files" target="_blank">https://www.filesmerge.com/merge-text-files</a></li>
-                <li class="commonClass textReplace"><a href="https://convertcase.net/replace-text/" target="_blank">https://convertcase.net/replace-text/</a></li>
-                <li class="commonClass textConvertCase"><a href="https://convertcase.net/?q=" target="_blank">https://convertcase.net/</a></li>
+                <li class="commonClass"><a href="https://text-toolz.com/text-tools/find-and-replace" target="_blank">https://text-toolz.com/text-tools/find-and-replace</a></li>
+                <li class="commonClass invisible textReplace"><a href="https://convertcase.net/replace-text/" target="_blank">https://convertcase.net/replace-text/</a></li>
+                <li class="commonClass invisible textConvertCase"><a href="https://convertcase.net/?q=" target="_blank">https://convertcase.net/</a></li>
                 <li class="commonClass"><a href="https://www.fontsquirrel.com/matcherator" target="_blank">https://www.fontsquirrel.com/matcherator</a></li>
                 <li class="commonClass"><a href="https://www.upscale.media/upload" target="_blank">https://www.upscale.media/upload</a></li>
                 <li class="commonClass"><a href="https://www.pica-ai.com/photo-enhancer/" target="_blank">https://www.pica-ai.com/photo-enhancer/</a></li>
@@ -272,8 +274,8 @@
                 this.location.href = this.location.pathname;
             //document.querySelector('button[type="button"]').click(), this.location.href = this.location.pathname;//this.location.reload();
 
-            if (event.altKey && event.key === '1')
-                appendUsingTemplateLiteral("\nconvert this bangla phonetic into english sentence");
+            if (event.shiftKey && event.key === '!')
+                copyTextToClipboard(`^\\s*.?\\\\?.*\\r?\\n`);
             if (event.altKey && event.key === '2')
                 appendUsingTemplateLiteral("\ncheck the grammatical errors only if error has, not a revised or rephrased version of this.");
             if (event.altKey && event.key === '3')
@@ -385,12 +387,17 @@
 
 
 
-
+        function copied() {
+            const c = document.getElementById("copied");
+            c.style.display = "block";
+            setTimeout(() => c.style.display = "none", 800);
+        }
 
         function copyTextToClipboard(text) {
             if (navigator.clipboard) {
                 navigator.clipboard.writeText(text).then(() => {
                     console.log("Text copied to clipboard");
+                    copied();
                 }).catch(err => {
                     console.error("Could not copy text: ", err);
                 });
