@@ -274,6 +274,8 @@
                 this.location.href = this.location.pathname;
             //document.querySelector('button[type="button"]').click(), this.location.href = this.location.pathname;//this.location.reload();
 
+            if (event.shiftKey && event.key === 'H')
+                document.querySelectorAll('.invisible').forEach(e => { e.style.display = (e.style.display === 'none' || e.style.display === '') ? 'block' : 'none'; });
             if (event.shiftKey && event.key === '!')
                 copyTextToClipboard(`^\\s*.?\\\\?.*\\r?\\n`);
             if (event.altKey && event.key === '2')
