@@ -84,7 +84,7 @@
                 <li class="commonClass searchEngine avgSearchEngine querySearch aiModel fullStudy avgStudy"><a href="https://www.perplexity.ai/?q=" target="_blank">https://www.perplexity.ai/</a></li>
                 <li class="commonClass searchEngine avgSearchEngine querySearch aiModel fullStudy avgStudy"><a href="https://www.phind.com/search/?q=" target="_blank">https://www.phind.com/</a></li>
                 <li class="commonClass searchEngine aiModel fullStudy"><a href="https://www.genspark.ai/search?query=" target="_blank">https://www.genspark.ai/</a></li>
-                <li class="commonClass searchEngine aiModel fullStudy"><a href="https://www.hotbot.com/?q=" target="_blank">https://www.hotbot.com//</a></li>
+                <li class="commonClass searchEngine aiModel fullStudy"><a href="https://www.hotbot.com/?q=" target="_blank">https://www.hotbot.com/</a></li>
                 <li class="commonClass searchEngine aiModel"><a href="https://komo.ai/" target="_blank">https://komo.ai/</a></li>
                 <li class="commonClass searchEngine aiModel fullStudy avgStudy"><a href="https://you.com/search?q=" target="_blank">https://you.com/</a></li>
                 <li class="commonClass searchEngine aiModel"><a href="https://andisearch.com/?q=" target="_blank">https://andisearch.com/</a></li>
@@ -417,9 +417,21 @@
                 document.body.removeChild(textArea);
             }
         }
-
-
-
     </script>
+    <script>
+        function highlightUrlSlug() {
+            const links = document.querySelectorAll('.grid-container a');
+            links.forEach(link => {
+                const text = (link.textContent || '').trim();
+                const m = text.match(/\/([^\/?#]+)\/?(\?.*)?$/);
+                if (!m) return;
+                const slug = m[1];
+                const prefix = text.substring(0, text.lastIndexOf('/' + slug));
+                link.innerHTML = prefix + '/<span style="color:#c2185b;font-weight:600;">' + slug + '</span>';
+            });
+        }
+        document.addEventListener('DOMContentLoaded', highlightUrlSlug);
+    </script>
+
 </body>
 </html>
