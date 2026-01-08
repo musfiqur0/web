@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Grid Layout</title>
+    <style>
+        .parent {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .aaa {
+            position: relative;
+            background-color: #e6e6e6;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        }
+
+        .parent .aaa pre {
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.6;
+            white-space: pre-wrap;
+        }
+        /* Copy button */
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 10px;
+            font-size: 12px;
+            padding: 4px 8px;
+            border: none;
+            border-radius: 4px;
+            background: #ffffff;
+            cursor: pointer;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+        }
+
+            .copy-btn:hover {
+                background: #f0f0f0;
+            }
+        /* Copy button. */
+    </style>
+</head>
+<body>
+    <!--
+        https://github.com/musfiqur0/file
+    -->
+    <div class="parent">
+        <div class="aaa">
+            <button class="copy-btn">Copy this</button>
+            <pre>
+$$$$1
+/nerd		>depth
+/jargonize	>Technical
+/short 		>To the Point
+TLDR		>Too Long, Didn't Read
+ELI10		>Explain Like I’m 10 (years old)
+ELI5 		>Explain Like I’m 5 (years old)
+/human		>Tonality
+/diagram
+/debate
+            </pre>
+        </div>
+        <div class="aaa">
+            <button class="copy-btn">Copy this</button>
+            <pre>
+$$$$2
+1.check the grammatical errors only if error has, not a revised or rephrased version of this.
+2.explain with code examples
+3.extract the text from this image
+4.what is the meaning of
+5.convert this phonetic into bangla
+            </pre>
+        </div>
+        <div class="aaa">
+            <button class="copy-btn">Copy this</button>
+            <pre>
+$$$$3
+1.C:\Windows\System32\cmd.exe /K cd /d C:\Users\Avenger\Desktop\Driver
+2.start "" "C:\Program Files\Mozilla Firefox\firefox.exe" -private-window https://www.google.com
+3.taskkill /FI "STATUS eq NOT RESPONDING" /F
+taskkill /FI "STATUS ne NOT RESPONDING" /F
+4.cd C:\
+start Sample.sln
+
+            </pre>
+        </div>
+        <!--<div class="aaa">5</div>-->
+    </div>
+    <div class="" style="margin-top:10px">
+        <div class="aaa">
+            <button class="copy-btn">Copy this</button>
+            <pre>
+$$$$4
+1.^\s*.?https?.*\r?\n
+2.remove more than 2 now lines=>
+(\r?\n){3,}
+>>
+\r\n\r\n
+3.
+public void Configure\(EntityTypeBuilder<Award> builder\)\r\n[\s\S]*?}
+4.
+(public\s+void\s+Configure[^\r\n]+[\s\S]*?{)
+>$1\r\n            //Append this new comment in here\r\n            //Append this new comment in here with a unused variable below
+5.
+//[HttpDelete("Delete")]
+//public async Task<IActionResult> Delete(int id)
+//{
+//    var result = await group.Delete(id);
+//    return Ok(result);
+//}
+
+>>
+
+[HttpDelete("Delete")]
+public async Task<IActionResult> Delete(int id)
+{
+    var result = await group.Delete(id);
+    return Ok(result);
+}
+####################
+//(\[HttpDelete\("Delete"\)])(\r\n\s*)//([\s\S]*?\))(\r\n\s*)//({)(\r\n\s*)//(    var result = await ([^.]+).Delete\(id\);)(\r\n\s*)//(    return Ok\(result\);)(\r\n\s*)//(})
+>
+$1$2$3$4$5$6$7$9$10$11$12
+6.
+                </pre>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.copy-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const parent = btn.parentElement;
+                const text = parent.innerText.replace('Copy this', '').trim();
+                navigator.clipboard.writeText(text);
+                btn.textContent = 'Copied!';
+                setTimeout(() => btn.textContent = 'Copy this', 1200);
+            });
+        });
+    </script>
+</body>
+</html>

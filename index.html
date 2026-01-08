@@ -135,13 +135,10 @@
                 <li class="commonClass aiModel"><a href="https://rationale.jina.ai/?q=" target="_blank">https://rationale.jina.ai/</a></li>
                 <li class="commonClass aiModel"><a href="https://www.studyfetch.com/" target="_blank">https://www.studyfetch.com/</a></li>
                 <li class="commonClass aiModel"><a href="https://app.youlearn.ai/" target="_blank">https://app.youlearn.ai/</a></li>
+                <li class="commonClass invisible"><a href="infoPage" target="_blank">https://musfiqur0.github.io/web/infoPage.html</a></li>
             </ul>
             <ol>
                 <li>^\s*.?https?.*\r?\n</li>
-                <li>check the grammatical errors only if error has, not a revised or rephrased version of this.</li>
-                <li>explain with code examples</li>
-                <li>extract the text from this image</li>
-                <li>what is the meaning of </li>
                 <li>convert this phonetic into bangla</li>
             </ol>
         </div>
@@ -279,14 +276,6 @@
             if (event.shiftKey && event.key === '!')
                 copyTextToClipboard(`^\\s*.?\\\\?.*\\r?\\n`);
             if (event.altKey && event.key === '2')
-                appendUsingTemplateLiteral("\ncheck the grammatical errors only if error has, not a revised or rephrased version of this.");
-            if (event.altKey && event.key === '3')
-                appendUsingTemplateLiteral("\nexplain with code examples");
-            if (event.altKey && event.key === '4')
-                appendUsingTemplateLiteral("\nextract the text from this image");
-            if (event.altKey && event.key === '5')
-                appendUsingTemplateLiteral("what is the meaning of ");
-            if (event.altKey && event.key === '5')
                 appendUsingTemplateLiteral("\nconvert this phonetic into bangla");
 
             if (event.ctrlKey && (event.key.toLowerCase() === '.'))
