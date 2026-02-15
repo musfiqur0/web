@@ -6,7 +6,7 @@
 </head>
 <body>
     <!--
-    => ctrl + mouseout on link = open that link
+    => altr + mouseout on link = open that link
     => ctrl + enter  = append textarea's text
     => ctrl + .  = open all that holds commonClass class
     => ctrl + " "  = open all that holds avgStudy class
@@ -186,6 +186,21 @@
         </div>
 
     </div>
+    <!-- Modal -->
+    <div id="modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.45); z-index:999999;">
+        <div style="background:#fff; width:75%; height:84%; margin:4% auto; border-radius:10px; position:relative; display:flex; flex-direction:column;">
+            <span id="modalClose" style="position:absolute; right:12px; top:8px; font-size:22px; cursor:pointer;">&times;</span>
+            <!-- BODY -->
+            <div style="display:grid; grid-template-columns:1.2fr 3fr; flex:1; min-height:0;">
+                <!-- LEFT: links -->
+                <div id="modalLinks" style=" padding:10px; overflow:auto; border-right:1px solid #ddd;"></div>
+                <!-- RIGHT: preview -->
+                <iframe id="modalFrame" style="border:none; width:100%; height:100%;"></iframe>
+            </div>
+        </div>
+    </div>
+    <!-- Modal. -->
+
     <style>
         .grid-container {
             display: grid;
@@ -309,7 +324,7 @@
         });
 
         document.querySelectorAll('ul').forEach(x => x.addEventListener('mouseout', function (e) {
-            if (e.target.tagName === 'A' && e.ctrlKey) {
+            if (e.target.tagName === 'A' && e.altKey) {
                 e.preventDefault(); // Prevent the default action
                 setTimeout(() => { // Wait for 300ms before executing the following code
                     openNewTabs(e.target.href); // Call openNewTabs after the delay
@@ -433,6 +448,66 @@
             });
         }
         document.addEventListener('DOMContentLoaded', highlightUrlSlug);
+    </script>
+    <script>
+        // For modal only
+
+        const modal = document.getElementById("modal");
+        const modalLinks = document.getElementById("modalLinks");
+        const modalFrame = document.getElementById("modalFrame");
+        const modalClose = document.getElementById("modalClose");
+
+        modalClose.onclick = closeModal;
+        modal.onclick = e => { if (e.target === modal) closeModal(); };
+
+        function closeModal() {
+            modal.style.display = "none";
+            modalFrame.src = "";
+            modalLinks.innerHTML = "";
+        }
+
+        function openMultipleLinks(urls) {
+            if (!urls) return;
+
+            if (typeof urls === "string") urls = [urls];
+            urls = Array.from(urls).map(x => x.href || x);
+
+            modalLinks.innerHTML = "";
+            modalFrame.src = "";
+
+            urls.forEach(url => {
+                const row = document.createElement("div");
+                row.style.marginBottom = "6px";
+
+                const openBtn = document.createElement("button");
+                openBtn.textContent = "Preview";
+                openBtn.style.marginRight = "6px";
+                openBtn.onclick = () => modalFrame.src = url;
+
+                const tabBtn = document.createElement("button");
+                tabBtn.textContent = "New Tab";
+                tabBtn.onclick = () => window.open(url, "_blank", "noopener,noreferrer");
+
+                const text = document.createElement("span");
+                text.textContent = " " + url;
+                text.style.fontSize = "12px";
+
+                row.append(openBtn, tabBtn, text);
+                modalLinks.appendChild(row);
+            });
+
+            if (urls[0]) modalFrame.src = urls[0];
+            modal.style.display = "block";
+        }
+
+        /* SINGLE LINK → MODAL */
+        document.querySelectorAll('a').forEach(a => {
+            a.addEventListener('click', e => {
+                if (e.ctrlKey || e.metaKey) return; // allow ctrl+click
+                e.preventDefault();
+                openMultipleLinks(a.href);
+            });
+        });
     </script>
 
 </body>
