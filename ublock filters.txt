@@ -1,0 +1,45 @@
+! Sep 15, 2025 https://www.facebook.com
+www.facebook.com##.x1u8a7rm.x8hos8a.xixxii4.x1g0dm76.x1s14bel.xpdmqnj.x1xy6bms.x1o0tod.xtijo5x.x9f619.xayqjjm.x1ey2m1c.x2bj2ny.x193iq5w.x2lah0s.xdt5ytf.x78zum5
+
+! Sep 21, 2025 https://komo.ai
+||accounts.google.com/gsi/iframe/select
+
+! Sep 21, 2025 https://www.perplexity.ai
+www.perplexity.ai##.bg-base.divide-subtlest.ring-subtlest.border-subtlest.ease-out
+www.perplexity.ai##.md\:grid.ring-1.shadow-md.rounded-xl.grid-cols-1.max-w-\[320px\].hidden.right-0.bottom-0.fixed.gap-md.bg-base.dark\:ring-subtler.ring-subtlest.m-md.p-sm
+
+! Sep 21, 2025 https://www.genspark.ai
+www.genspark.ai##.theme_spark.index.loginGuide
+
+! Sep 29, 2025 https://chat.qwen.ai
+chat.qwen.ai##.chat-recommend-txt-container
+
+! Sep 30, 2025 https://chatgpt.com
+chatgpt.com##.dark\:bg-token-main-surface-secondary.text-token-text-primary.bg-token-main-surface-primary.border-token-border-default.md\:items-center.shadow-xxs.dark\:border-transparent.lg\:mx-auto.\[text-wrap\:pretty\].text-sm.pe-3.ps-5.py-4.border.rounded-3xl.gap-4.items-start.w-full.flex
+
+chatgpt.com##.empty\:hidden.w-full.mt-3 > .text-center > div
+
+! Oct 1, 2025 https://www.perplexity.ai
+www.perplexity.ai##.bg-subtler.divide-subtlest.ring-subtlest.border-subtlest.ring-1.shadow-xl.rounded-xl.md\:flex-row.rounded-md.items-center.flex-col.w-full.flex.relative.md\:gap-md.p-md.mb-md.gap-sm
+
+! Oct 6, 2025 https://www.google.com
+www.google.com##.XPuBac
+
+! Oct 10, 2025 https://www.perplexity.ai
+www.perplexity.ai##.justify-center.items-center.flex.overflow-y-auto.inset-0.fixed
+www.perplexity.ai##.backdrop-blur-sm.duration-200.ease-outExpo.fade-in.animate-in.bg-backdrop\/70.inset-0.fixed.fill-mode-both.md\:items-center.items-stretch
+
+! Oct 10, 2025 https://www.codeconvert.ai
+||tally.so/popup/mZaWLy?originPage=%2Ffree-converter&alignLeft=1&hideTitle=1$subdocument
+
+! Oct 23, 2025 https://www.youtube.com
+www.youtube.com##.ytPlayerQuickActionButtonsHostDisableBackdropFilter.ytPlayerQuickActionButtonsHostCompactControls.ytPlayerQuickActionButtonsHost
+
+! Dec 13, 2025 https://www.diffchecker.com
+www.diffchecker.com##.diff-checker_ads__vAUwc > .undefined.ad-box_container__q9Jhx.hide-print
+www.diffchecker.com##.sidebar_open__jRIQB.sidebar_wrapper__t01WB
+www.diffchecker.com##.text-diff-form_diffForm__cK__c > .undefined.ad-box_container__q9Jhx.hide-print
+
+! Feb 24, 2026 https://www.genspark.ai
+www.genspark.ai##.mt-\[2vh\].px-\[10px\].justify-center.flex.relative
+
