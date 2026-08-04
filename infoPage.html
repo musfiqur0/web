@@ -160,9 +160,10 @@ $$$$6 Firefox extensions
 ➢<a href="https://addons.mozilla.org/en-US/firefox/addon/facebook-container/" target="_blank">facebook-container</a>
 ➢<a href="https://addons.mozilla.org/en-US/firefox/addon/enhancer-for-youtube/" target="_blank">enhancer-for-youtube</a>
 ➢<a href="https://addons.mozilla.org/en-US/firefox/addon/styl-us/" target="_blank">styl-us</a>
-➢<a href="https://addons.mozilla.org/en-US/firefox/addon/buster-captcha-solver/" target="_blank">styl-us</a>
-➢<a href="https://addons.mozilla.org/en-US/firefox/addon/copy-tab-urls-webex/" target="_blank">buster-captcha-solver</a>
+➢<a href="https://addons.mozilla.org/en-US/firefox/addon/buster-captcha-solver/" target="_blank">buster-captcha-solver</a>
+➢<a href="https://addons.mozilla.org/en-US/firefox/addon/copy-tab-urls-webex/" target="_blank">copy-tab-urls-webex</a>
 ➢<a href="https://addons.mozilla.org/en-US/firefox/addon/copy-all-tabs/" target="_blank">copy-all-tabs</a>
+➢<a href="https://addons.mozilla.org/en-US/firefox/addon/screenshot-capture-annotate/" target="_blank">screenshot-capture-annotate</a>
             </pre>
         </div>
         <div class="aaa">
@@ -193,6 +194,47 @@ $$$$8 Printing photo ratio
 ➢ Passport photo ratio = 1.5:1.9
 ➢ Visa photo ratio = 2:2
 ➢ Stamp photo ratio = 0.8:0.9
+            </pre>
+        </div>
+        <div class="aaa">
+            <button class="copy-btn">Copy this</button>
+            <pre style="white-space: pre-wrap;">
+$$$$8 Printing photo ratio
+
+var generatedSql = entityQuery.ToQueryString();
+int x = 5;
+            </pre>
+        </div>
+        <div class="aaa">
+            <button class="copy-btn">Copy this</button>
+            <pre style="white-space: pre-wrap;">
+$$$$8 Code block elapsed time
+
+var stopwatch = Stopwatch.StartNew();
+var ticket = await _db.SupportTickets
+    .AsNoTracking()
+    .AsSplitQuery()
+    .Include(x => x.Comments)
+    .Include(x => x.StatusHistories)
+    .FirstOrDefaultAsync(
+        x => x.Id == query.Id,
+        ct);
+stopwatch.Stop();
+_logger.LogInformation("Ticket database query completed in {ElapsedMs} ms.", stopwatch.Elapsed.TotalMilliseconds);
+            </pre>
+        </div>
+        <div class="aaa">
+            <button class="copy-btn">Copy this</button>
+            <pre style="white-space: pre-wrap;">
+$$$$8 Code block elapsed time
+
+stopwatch.Restart();
+
+var response = MapTicket(ticket);
+
+stopwatch.Stop();
+
+_logger.LogInformation("Ticket mapping completed in {ElapsedMs} ms.", stopwatch.Elapsed.TotalMilliseconds);
             </pre>
         </div>
     </div>
