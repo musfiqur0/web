@@ -199,7 +199,7 @@ $$$$8 Printing photo ratio
         <div class="aaa">
             <button class="copy-btn">Copy this</button>
             <pre style="white-space: pre-wrap;">
-$$$$8 Printing photo ratio
+$$$$9 ef derived query
 
 var generatedSql = entityQuery.ToQueryString();
 int x = 5;
@@ -208,7 +208,7 @@ int x = 5;
         <div class="aaa">
             <button class="copy-btn">Copy this</button>
             <pre style="white-space: pre-wrap;">
-$$$$8 Code block elapsed time
+$$$$10 Code block elapsed time
 
 var stopwatch = Stopwatch.StartNew();
 var ticket = await _db.SupportTickets
@@ -226,7 +226,7 @@ _logger.LogInformation("Ticket database query completed in {ElapsedMs} ms.", sto
         <div class="aaa">
             <button class="copy-btn">Copy this</button>
             <pre style="white-space: pre-wrap;">
-$$$$8 Code block elapsed time
+$$$$10 Code block elapsed time 2
 
 stopwatch.Restart();
 
@@ -235,6 +235,24 @@ var response = MapTicket(ticket);
 stopwatch.Stop();
 
 _logger.LogInformation("Ticket mapping completed in {ElapsedMs} ms.", stopwatch.Elapsed.TotalMilliseconds);
+            </pre>
+        </div>
+        <div class="aaa">
+            <button class="copy-btn">Copy this</button>
+            <pre style="white-space: pre-wrap;">
+$$$$11 git
+
+git clone --recurse-submodules https://github.com/musfiqur0/ApiGateway.git
+git push -u origin DevMusfiqur:DevMusfiqur
+git log -5 --oneline
+
+git reset --soft HEAD~1
+git add -A
+git commit -m "Hello World"
+git push --force-with-lease origin DevMusfiqur
+
+carefull >> git push --force origin main:DevMusfiqur
+
             </pre>
         </div>
     </div>
