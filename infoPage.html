@@ -231,10 +231,12 @@ $$$$10 Code block elapsed time 2
 stopwatch.Restart();
 
 var response = MapTicket(ticket);
-
 stopwatch.Stop();
 
 _logger.LogInformation("Ticket mapping completed in {ElapsedMs} ms.", stopwatch.Elapsed.TotalMilliseconds);
+
+- Keep simple statements and method calls on one line.
+- Avoid excessive line wrapping while preserving normal indentation and block structure.
             </pre>
         </div>
         <div class="aaa">
